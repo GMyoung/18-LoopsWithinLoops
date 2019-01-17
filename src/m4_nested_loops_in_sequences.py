@@ -3,7 +3,7 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of SEQUENCES OF SUB-SEQUENCES.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Yicheng Yang.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
@@ -103,6 +103,13 @@ def run_test_multiply_numbers():
 
 
 def multiply_numbers(sequence_of_lists):
+
+    for k in range(len(sequence_of_lists)):
+        LOL = sequence_of_lists[k]
+
+        for j in range(len(LOL)):
+            LOL[j] = LOL[j] * (equence_of_lists[j]k+1)
+
     """
     In the given sequence of lists,
       -- multiplies each element of the first list by 1,
