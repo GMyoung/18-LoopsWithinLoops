@@ -3,7 +3,7 @@ This project demonstrates NESTED LOOPS (i.e., loops within loops)
 in the context of PRINTING on the CONSOLE.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Yicheng Yang.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
@@ -35,6 +35,10 @@ def run_test_rectangle_of_stars():
 
 
 def rectangle_of_stars(r, c):
+    for k in range(r):
+        for j in range(c):
+            print('*',end='')
+        print()
     """
     Prints a rectangle of stars (asterisks), with r rows and c columns.
     For example, when r = 3 and c = 5:
@@ -44,7 +48,7 @@ def rectangle_of_stars(r, c):
     Preconditions:  r and c are non-negative integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     #  *** Unless your instructor directs you otherwise,
@@ -84,6 +88,10 @@ def run_test_triangle_of_stars():
 
 
 def triangle_of_stars(r):
+    for k in range(r):
+        for j in range(k+1):
+            print('*',end='')
+        print()
     """
     Prints a triangle of stars (asterisks), with r rows.
       -- The first row is 1 star,
@@ -98,7 +106,7 @@ def triangle_of_stars(r):
     Precondition:  r is a non-negative integer.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     #  *** Unless your instructor directs you otherwise,
@@ -139,6 +147,12 @@ def run_test_decreasing_exclamation_marks():
 
 
 def decreasing_exclamation_marks(m, n):
+    POG = 0
+    for k in range(m-n+1):
+        for j in range(m-k):
+            print('!',end='')
+
+        print()
     """
     Prints exclamation marks:  m on the first row,
     m-1 on the next row, m-2 on the next, etc, until n on the last row.
@@ -150,7 +164,7 @@ def decreasing_exclamation_marks(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -181,6 +195,21 @@ def run_test_alternating_brackets():
 
 
 def alternating_brackets(m, n):
+    POG = ''
+    AFK = ''
+    if m % 2 == 0:
+        POG = '['
+        AFK = ']'
+    else:
+        POG = ']'
+        AFK = '['
+    for k in range(m-n+1):
+        for j in range(m-k):
+            if (m-j)% 2 == 0:
+                print(POG, end='')
+            else:
+                print(AFK, end='')
+        print()
     """
     Prints alternating left/right square brackets:  m on the first row,
     m-1 on the next row, m-2 on the next, etc, until n on the last row.
@@ -192,7 +221,7 @@ def alternating_brackets(m, n):
     Precondition:  m and n are positive integers with m >= n.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
